@@ -1,0 +1,26 @@
+# mkdocs.yml
+site_name: QENS_to_csv_app Documentation
+
+theme:
+  name: "material"
+
+plugins:
+- search
+- autorefs
+- mkdocstrings:
+    handlers:
+      python:
+        options:
+          docstring_style: numpy
+          members_order: source
+
+
+
+
+nav:
+  - QENS to csv App: index.md
+  - tutorials.md
+  - how-to-guides.md
+  - Ref. QENS to csv App: reference.md
+  - Ref. FuncionesLeer: ref-funcionesleer.md
+  - explanation.md
