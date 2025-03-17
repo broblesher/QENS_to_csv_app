@@ -221,9 +221,9 @@ class FuncionesLeer:
                     # la descarto
                     if (float(elements[0]) != 0):
                         # Añado los valores a las listas correspondientes
-                        energy[numq-1].append(float(elements[0]))
-                        scatInt[numq-1].append(float(elements[1]))
-                        err[numq-1].append(float(elements[2]))
+                        energy[numq - 1].append(float(elements[0]))
+                        scatInt[numq - 1].append(float(elements[1]))
+                        err[numq - 1].append(float(elements[2]))
         return qvalue, energy, scatInt, err
 
     def leer_de_IN16B(self, iFile: _io.TextIOWrapper, qvalue: list[float],
@@ -284,9 +284,9 @@ class FuncionesLeer:
                 # Si hay elementos y no empiezan por #, son los datos
                 if (elements[0] != "#"):
                     # Añado los valores a la lista correspondiente
-                    energy[numq-1].append(float(elements[0]))
-                    scatInt[numq-1].append(float(elements[1]))
-                    err[numq-1].append(float(elements[2]))
+                    energy[numq - 1].append(float(elements[0]))
+                    scatInt[numq - 1].append(float(elements[1]))
+                    err[numq - 1].append(float(elements[2]))
         return qvalue, energy, scatInt, err
 
     def leer_de_LET(self, iFileName: str) -> tuple:
@@ -407,9 +407,9 @@ class FuncionesLeer:
                         # Si hay elementos y no empiezan por #, son los datos
                         if (elements[0] != "#"):
                             # Añado los valores a la lista correspondiente
-                            energy[numq-1].append(float(elements[0]))
-                            scatInt[numq-1].append(float(elements[1]))
-                            err[numq-1].append(float(elements[2]))
+                            energy[numq - 1].append(float(elements[0]))
+                            scatInt[numq - 1].append(float(elements[1]))
+                            err[numq - 1].append(float(elements[2]))
                 self.close_iFile(iFile)
         return qvalue, energy, scatInt, err
 
@@ -471,9 +471,9 @@ class FuncionesLeer:
                 # Si hay elementos y no empiezan por #, son los datos
                 if (elements[0][0] != "#"):
                     # Añado los valores a la lista correspondiente
-                    energy[numq-1].append(float(elements[0]))
-                    scatInt[numq-1].append(float(elements[1]))
-                    err[numq-1].append(float(elements[2]))
+                    energy[numq - 1].append(float(elements[0]))
+                    scatInt[numq - 1].append(float(elements[1]))
+                    err[numq - 1].append(float(elements[2]))
         return qvalue, energy, scatInt, err
 
     def read_from_ifile(self, iFile: _io.TextIOWrapper,
@@ -679,7 +679,7 @@ class FuncionesLeer:
             energyM.name = 'E- (meV)'
             factSusS = pd.Series(np.pi * (np.exp(
                 energyM.abs() / kb / 1000 / temp) - 1))
-            chiSM = factSusS*dfS[dfS.iloc[:, 3 * i] < 0].iloc[:, 3 * i + 1]
+            chiSM = factSusS * dfS[dfS.iloc[:, 3 * i] < 0].iloc[:, 3 * i + 1]
             chiSM.name = dfS.iloc[:, 3 * i + 1].name
             energyM = energyM.abs()
             dfchiM = pd.concat([energyM, chiSM], axis=1)
@@ -690,7 +690,8 @@ class FuncionesLeer:
             # Guardo las E>0 para una Q
             energyP = dfS[dfS.iloc[:, 3 * i] > 0].iloc[:, 3 * i]
             energyP.name = 'E+ (meV)'
-            factSusS = pd.Series(np.pi * (1 - np.exp(- energyP / kb / 1000 / temp)))
+            factSusS = pd.Series(np.pi * (1 - np.exp(
+                - energyP / kb / 1000 / temp)))
             chiSP = factSusS * dfS[dfS.iloc[:, 3 * i] > 0].iloc[:, 3 * i + 1]
             chiSP.name = dfS.iloc[:, 3 * i + 1].name
             dfchiP = pd.concat([energyP, chiSP], axis=1)
