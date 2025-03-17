@@ -12,8 +12,8 @@ Filename: QENStoCSV_Dlg.py
 Author: Beatriz Robles Hernández
 Date: 2025-03-10
 Version: 1.0
-Description: 
-    This script creates the class of the GUI that uses 
+Description:
+    This script creates the class of the GUI that uses
     the app_QENStoCSV_Dlg application.
 
 License: GLP
@@ -48,7 +48,9 @@ class Ui_Dialog_QENStoCSV(object):
         self.horizontalLayout.addWidget(self.pushButton_iFile)
         self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.verticalLayout_5.addLayout(self.verticalLayout_3)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_5.addItem(spacerItem)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -75,7 +77,9 @@ class Ui_Dialog_QENStoCSV(object):
         self.horizontalLayout_4.addWidget(self.radioButton_LET)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
         self.verticalLayout_5.addLayout(self.verticalLayout_2)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_5.addItem(spacerItem1)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
@@ -92,14 +96,18 @@ class Ui_Dialog_QENStoCSV(object):
         self.horizontalLayout_2.addWidget(self.pushButton_oFile)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.verticalLayout_5.addLayout(self.verticalLayout)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_5.addItem(spacerItem2)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.checkBox_Susceptivility = QtWidgets.QCheckBox(Dialog_QENStoCSV)
         self.checkBox_Susceptivility.setObjectName("checkBox_Susceptivility")
         self.horizontalLayout_5.addWidget(self.checkBox_Susceptivility)
-        spacerItem3 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            138, 20, QtWidgets.QSizePolicy.Expanding,
+            QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem3)
         self.label_Temp = QtWidgets.QLabel(Dialog_QENStoCSV)
         self.label_Temp.setObjectName("label_Temp")
@@ -111,7 +119,9 @@ class Ui_Dialog_QENStoCSV(object):
         self.label_K.setObjectName("label_K")
         self.horizontalLayout_5.addWidget(self.label_K)
         self.verticalLayout_5.addLayout(self.horizontalLayout_5)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem4 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_5.addItem(spacerItem4)
         self.verticalLayout_4 = QtWidgets.QVBoxLayout()
         self.verticalLayout_4.setObjectName("verticalLayout_4")
@@ -144,29 +154,38 @@ class Ui_Dialog_QENStoCSV(object):
         self.verticalLayout_6.addLayout(self.verticalLayout_5)
 
         self.retranslateUi(Dialog_QENStoCSV)
-        self.pushButton_Exit.clicked.connect(Dialog_QENStoCSV.reject) # type: ignore
+        self.pushButton_Exit.clicked.connect(Dialog_QENStoCSV.reject)
         QtCore.QMetaObject.connectSlotsByName(Dialog_QENStoCSV)
 
     def retranslateUi(self, Dialog_QENStoCSV):
         _translate = QtCore.QCoreApplication.translate
-        Dialog_QENStoCSV.setWindowTitle(_translate("Dialog_QENStoCSV", "QENS to CSV"))
-        self.label_input.setText(_translate("Dialog_QENStoCSV", "Input path and file name:"))
-        self.lineEdit_iFile.setText(_translate("Dialog_QENStoCSV", os.path.expanduser('~')))
-        self.pushButton_iFile.setText(_translate("Dialog_QENStoCSV", "Browse"))
-        self.label_intrument.setText(_translate("Dialog_QENStoCSV", "Instrument:"))
+        Dialog_QENStoCSV.setWindowTitle(
+            _translate("Dialog_QENStoCSV", "QENS to CSV"))
+        self.label_input.setText(
+            _translate("Dialog_QENStoCSV", "Input path and file name:"))
+        self.lineEdit_iFile.setText(
+            _translate("Dialog_QENStoCSV", os.path.expanduser('~')))
+        self.pushButton_iFile.setText(
+            _translate("Dialog_QENStoCSV", "Browse"))
+        self.label_intrument.setText(
+            _translate("Dialog_QENStoCSV", "Instrument:"))
         self.radioButton_IN5.setText(_translate("Dialog_QENStoCSV", "IN5"))
         self.radioButton_IN16B.setText(_translate("Dialog_QENStoCSV", "IN16B"))
         self.radioButton_FOCUS.setText(_translate("Dialog_QENStoCSV", "FOCUS"))
         self.radioButton_LET.setText(_translate("Dialog_QENStoCSV", "LET"))
-        self.label_output.setText(_translate("Dialog_QENStoCSV", "Output path and file name:"))
-        self.lineEdit_oFile.setText(_translate("Dialog_QENStoCSV", os.path.expanduser('~')))
+        self.label_output.setText(
+            _translate("Dialog_QENStoCSV", "Output path and file name:"))
+        self.lineEdit_oFile.setText(
+            _translate("Dialog_QENStoCSV", os.path.expanduser('~')))
         self.pushButton_oFile.setText(_translate("Dialog_QENStoCSV", "Browse"))
-        self.checkBox_Susceptivility.setText(_translate("Dialog_QENStoCSV", "Save susceptivility too"))
+        self.checkBox_Susceptivility.setText(
+            _translate("Dialog_QENStoCSV", "Save susceptivility too"))
         self.label_Temp.setText(_translate("Dialog_QENStoCSV", "T = "))
         self.label_Temp.setDisabled(True)
         self.label_K.setText(_translate("Dialog_QENStoCSV", "K"))
         self.label_K.setDisabled(True)
         self.lineEdit_Temp.setDisabled(True)
-        self.pushButton_Save.setText(_translate("Dialog_QENStoCSV", "Save as CSV"))
+        self.pushButton_Save.setText(
+            _translate("Dialog_QENStoCSV", "Save as CSV"))
         self.pushButton_Exit.setText(_translate("Dialog_QENStoCSV", "Exit"))
         self.label_log.setText(_translate("Dialog_QENStoCSV", "Log:"))
