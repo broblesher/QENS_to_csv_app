@@ -675,12 +675,12 @@ class FuncionesLeer:
 
         for i, q in enumerate(qvalue):
             # Guardo las E<0 para una Q
-            energyM = dfS[dfS.iloc[:, 3*i] < 0].iloc[:, 3*i]
+            energyM = dfS[dfS.iloc[:, 3 * i] < 0].iloc[:, 3 * i]
             energyM.name = 'E- (meV)'
-            factSusS = pd.Series(np.pi*(np.exp(
+            factSusS = pd.Series(np.pi * (np.exp(
                 energyM.abs()/kb/1000/temp) - 1))
-            chiSM = factSusS*dfS[dfS.iloc[:, 3*i] < 0].iloc[:, 3*i+1]
-            chiSM.name = dfS.iloc[:, 3*i+1].name
+            chiSM = factSusS*dfS[dfS.iloc[:, 3 * i] < 0].iloc[:, 3 * i + 1]
+            chiSM.name = dfS.iloc[:, 3 * i + 1].name
             energyM = energyM.abs()
             dfchiM = pd.concat([energyM, chiSM], axis=1)
             dfchiM.sort_values('E- (meV)', ascending=True, inplace=True)
@@ -688,11 +688,11 @@ class FuncionesLeer:
             dfchiM.reset_index(drop=True, inplace=True)
 
             # Guardo las E>0 para una Q
-            energyP = dfS[dfS.iloc[:, 3*i] > 0].iloc[:, 3*i]
+            energyP = dfS[dfS.iloc[:, 3 * i] > 0].iloc[:, 3 * i]
             energyP.name = 'E+ (meV)'
-            factSusS = pd.Series(np.pi*(1 - np.exp(-energyP/kb/1000/temp)))
-            chiSP = factSusS*dfS[dfS.iloc[:, 3*i] > 0].iloc[:, 3*i+1]
-            chiSP.name = dfS.iloc[:, 3*i+1].name
+            factSusS = pd.Series(np.pi * (1 - np.exp(-energyP/kb/1000/temp)))
+            chiSP = factSusS * dfS[dfS.iloc[:, 3 * i] > 0].iloc[:, 3 * i + 1]
+            chiSP.name = dfS.iloc[:, 3 * i + 1].name
             dfchiP = pd.concat([energyP, chiSP], axis=1)
             dfchiP.reset_index(drop=True, inplace=True)
 
