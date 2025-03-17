@@ -678,7 +678,7 @@ class FuncionesLeer:
             energyM = dfS[dfS.iloc[:, 3 * i] < 0].iloc[:, 3 * i]
             energyM.name = 'E- (meV)'
             factSusS = pd.Series(np.pi * (np.exp(
-                energyM.abs()/kb/1000/temp) - 1))
+                energyM.abs() / kb / 1000 / temp) - 1))
             chiSM = factSusS*dfS[dfS.iloc[:, 3 * i] < 0].iloc[:, 3 * i + 1]
             chiSM.name = dfS.iloc[:, 3 * i + 1].name
             energyM = energyM.abs()
@@ -690,7 +690,7 @@ class FuncionesLeer:
             # Guardo las E>0 para una Q
             energyP = dfS[dfS.iloc[:, 3 * i] > 0].iloc[:, 3 * i]
             energyP.name = 'E+ (meV)'
-            factSusS = pd.Series(np.pi * (1 - np.exp(-energyP/kb/1000/temp)))
+            factSusS = pd.Series(np.pi * (1 - np.exp(- energyP / kb / 1000 / temp)))
             chiSP = factSusS * dfS[dfS.iloc[:, 3 * i] > 0].iloc[:, 3 * i + 1]
             chiSP.name = dfS.iloc[:, 3 * i + 1].name
             dfchiP = pd.concat([energyP, chiSP], axis=1)
@@ -726,7 +726,7 @@ class FuncionesLeer:
         thresholdVal: int
         # Todas las E son no-NAN. Si hay una columna más con no-NAN, NO
         # se hace drop.
-        thresholdVal = int(len(dfS.columns)/3+1)
+        thresholdVal = int(len(dfS.columns) / 3 + 1)
         dfS.dropna(axis=0, thresh=thresholdVal, inplace=True)
         dfS.to_csv(oFileName, sep='\t', index=False)
 
@@ -760,7 +760,7 @@ class FuncionesLeer:
         # de las columnas E-. Hay un rango de filas para las que no
         # tengo valores de E+, y por lo tanto son NAN.
         # Si hay una columna más con no-NAN, no se hace drop
-        thresholdVal = int(len(dfchiSorted.columns)/4+1)
+        thresholdVal = int(len(dfchiSorted.columns) / 4 + 1)
         dfchiSorted.dropna(thresh=thresholdVal, inplace=True)
         dfchiSorted.to_csv(oFileName.replace('.csv', '_Chi.csv'), sep='\t',
                            index=False)
