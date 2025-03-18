@@ -3,7 +3,7 @@
 QENS to csv App is a GUI software to parse QENS data recorded in several instruments,
 sort it in a matrix form with the scattered intensity S(Q, E) measured at different
 Q-values across the columns, and export it to csv files. It also allows to compute
-the corresponding susceptivility `$\chi$`(Q, E) and export it to a csv file. 
+the corresponding susceptivility $\chi$(Q, E) and export it to a csv file. 
 
 ## Documentation
 
