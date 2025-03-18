@@ -7,4 +7,4 @@ the corresponding susceptivility $\Chi$(Q, E) and export it to a csv file.
 
 ## Documentation
 
-You can find the documentation [here][https://broblesher.github.io/QENS_to_csv_app/].
+You can find the documentation [here](https://broblesher.github.io/QENS_to_csv_app/])
