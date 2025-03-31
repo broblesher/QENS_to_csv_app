@@ -20,7 +20,7 @@
     
     
       
-        <title>Tutorials - QENS_to_csv_app Documentation</title>
+        <title>About - QENS_to_csv_app Documentation</title>
       
     
     
@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#about" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorials
+              About
             
           </span>
         </div>
@@ -215,12 +220,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Tutorials
+    About
     
   </span>
   
@@ -305,7 +312,7 @@
         
   
   <span class="md-ellipsis">
-    Explanation
+    Background
     
   </span>
   
@@ -332,6 +339,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -347,9 +356,32 @@
 
 
 
-  <h1>Tutorials</h1>
-
-
+<h1 id="about">About</h1>
+<p>QENS to csv sorts data collected at <a href="https://www.ill.eu/for-ill-users/instruments/instruments-list/in5/description/instrument-layout">IN5</a> and <a href="https://www.ill.eu/for-ill-users/instruments/instruments-list/in16b/description/instrument-layout">IN16B</a> at <a href="https://www.ill.eu/">ILL</a> (Grenoble, France), <a href="https://www.psi.ch/en/sinq/focus">FOCUS</a> at <a href="https://www.psi.ch/en/cnm">PSI</a> (Villigen, Switzerland) and <a href="https://www.isis.stfc.ac.uk/Pages/let.aspx">LET</a> at <a href="https://www.isis.stfc.ac.uk/Pages/home.aspx">ISIS</a> (Oxfordshire, UK). Input data files should be text files (<em>.inx, </em>.txt, *.dat) obtained from the reduction of raw data using some existing software (<a href="https://www.ill.eu/for-ill-users/support-labs-infrastructure/software-scientific-tools/lamp">Lamp</a>, <a href="https://www.ncnr.nist.gov/dave/index.html">DAVE</a>, <a href="https://www.mantidproject.org/">Mantid</a>, <a href="http://mslice.isis.rl.ac.uk">MSlice</a>, etc). Sample data files from each instrument are provided as an example.</p>
+<h1 id="appearance">Appearance</h1>
+<p>QENS to csv App's interface looks like this:</p>
+<p><img alt="QENS to csv App GUI" src="../QENStoCSVappGUI.jpg" title="QENS to csv App" />
+<em>QENS to csv App GUI.</em></p>
+<h1 id="usage">Usage</h1>
+<ol>
+<li>
+<p>Write the absolute path and input file name in the corresponding edit box. Alternatively, you can click the <strong>Browse</strong> button to open a File Explorer window and select the input file.</p>
+</li>
+<li>
+<p>Select the instrument where the data was obtained.</p>
+</li>
+<li>
+<p>Write the absolute path and output file name in the corresponding edit box. Again, you can click the corresponding <strong>Browse</strong> button to open a File Exporer window and give a name to the output file.</p>
+</li>
+<li>
+<p>Click the <strong>Save as CSV</strong> botton to export the sorted data. </p>
+</li>
+<li>
+<p>There is option to calculate the susceptibility $\chi(Q, E)$ and export it to another file. To activate this option, you have to mark the <strong>Save susceptivility too</strong> checkbox. </p>
+</li>
+</ol>
+<p><img alt="QENS to csv App GUI chi" src="../QENStoCSVappGUI_2.jpg" title="The GUI with the susceptivility option checked" /></p>
+<p>Once checked, the temperature edit box will be active to write the corresponding value. When you click the <strong>Save as CSV</strong> botton both, the scattered intensity $S(Q, E)$ and the corresponding susceptivility $\chi(Q, E)$, will be exported to csv files. The name of the susceptivility file will be the same as the scattered intensity one, with "_chi" appended.</p>
 
 
 
