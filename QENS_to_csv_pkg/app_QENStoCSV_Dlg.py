@@ -58,7 +58,7 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
     _current_date: str
         to save the current date and time when displaying a msg
     _funcionesLeer: FuncionesLeer
-        an instance to the class FuncionesLeer][QENS_to_csv_pkg.FuncionesLeer]
+        an instance to the class [FuncionesLeer][QENS_to_csv_pkg.FuncionesLeer]
         to read and write from/to the input/output files
 
     Methods
