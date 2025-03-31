@@ -12,6 +12,8 @@ You can learn how to use the App following this [tutorial](tutorials.md).
 QENS to csv App works with data from IN5, IN16B, FOCUS and LET.
 
 ## Further information
+You can read more about the App [here](explanation.md).
+
 You can learn how to use QENS to cvs App following this [tutorial](tutorials.md).
 
 You can find the project documentation [here](reference.md), and [here](ref-funcionesleer.md).
