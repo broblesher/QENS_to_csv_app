@@ -218,7 +218,7 @@
         
   
   <span class="md-ellipsis">
-    About
+    Tutorial
     
   </span>
   
@@ -504,7 +504,7 @@
         
   
   <span class="md-ellipsis">
-    Background
+    Explanation
     
   </span>
   
@@ -844,13 +844,13 @@ to run the elements of the dlg.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG._susceptivility_checked">_susceptivility_checked</span></code></td>
+            <td><code><span title="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG._susceptibility_checked">_susceptibility_checked</span></code></td>
             <td>
                   <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>to save the value of the susceptivility checkbox</p>
+                <p>to save the value of the susceptibility checkbox</p>
               </div>
             </td>
           </tr>
@@ -1005,7 +1005,7 @@ and saves it as csv</p>
 
               <details class="quote">
                 <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 33</span>
+                <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 33</span>
 <span class="normal"> 34</span>
 <span class="normal"> 35</span>
 <span class="normal"> 36</span>
@@ -1441,8 +1441,8 @@ and saves it as csv</p>
 <span class="sd">        to save the output file name and path</span>
 <span class="sd">    _defaultPath: str</span>
 <span class="sd">        to save the default path when initializing the app</span>
-<span class="sd">    _susceptivility_checked: bool</span>
-<span class="sd">        to save the value of the susceptivility checkbox</span>
+<span class="sd">    _susceptibility_checked: bool</span>
+<span class="sd">        to save the value of the susceptibility checkbox</span>
 <span class="sd">    _temperature: str</span>
 <span class="sd">        to save the (str) value of the temperature introduced</span>
 <span class="sd">        in the lineEdit</span>
@@ -1495,9 +1495,9 @@ and saves it as csv</p>
 <span class="sd">        _defaultPath: str</span>
 <span class="sd">            the default path in the browser.</span>
 <span class="sd">            It is set to &quot;./User/Documents&quot;</span>
-<span class="sd">        _susceptivility_checked: bool</span>
+<span class="sd">        _susceptibility_checked: bool</span>
 <span class="sd">            the status of the check box that gives the option to save</span>
-<span class="sd">            the susceptivility</span>
+<span class="sd">            the susceptibility</span>
 <span class="sd">        _temperature: str</span>
 <span class="sd">            the string value of the temperature introduced in the dlg</span>
 <span class="sd">        _last_msg: str</span>
@@ -1515,7 +1515,7 @@ and saves it as csv</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">_defaultPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span>
         <span class="c1"># self._ifile_selected = False</span>
         <span class="c1"># self._ofile_selected = False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_temperature</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -1645,16 +1645,16 @@ and saves it as csv</p>
 
 <span class="sd">        Also enables/disables the temperature lineEdit.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptivility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptibility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">label_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">lineEdit_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">label_K</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptivility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptibility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">label_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">lineEdit_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">label_K</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="c1"># Función que se ejecuta cuando pulso save</span>
     <span class="k">def</span> <span class="nf">sortAndSave</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -1792,7 +1792,7 @@ and saves it as csv</p>
                         <span class="s1">&#39;: Data succesfully exported to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">insertPlainText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
                 <span class="c1"># Guardo el valor de la temperatura</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_temperature</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">display_temp_Text</span><span class="p">()</span>
                 <span class="n">temp</span><span class="p">:</span> <span class="nb">float</span>
@@ -1831,7 +1831,7 @@ and saves it as csv</p>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">=</span> <span class="n">QDateTime</span><span class="o">.</span><span class="n">currentDateTime</span><span class="p">()</span><span class="o">.</span>\
                             <span class="n">toString</span><span class="p">(</span><span class="s1">&#39;hh:mm:ss&#39;</span><span class="p">)</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">+</span> \
-                            <span class="s1">&#39;: Error exporting susceptivility data to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
+                            <span class="s1">&#39;: Error exporting susceptibility data to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">setTextColor</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">insertPlainText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span><span class="p">)</span>
                         <span class="k">return</span> <span class="kc">False</span>
@@ -1839,7 +1839,7 @@ and saves it as csv</p>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">=</span> <span class="n">QDateTime</span><span class="o">.</span><span class="n">currentDateTime</span><span class="p">()</span><span class="o">.</span>\
                             <span class="n">toString</span><span class="p">(</span><span class="s1">&#39;hh:mm:ss&#39;</span><span class="p">)</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">+</span> \
-                            <span class="s1">&#39;: Susceptivility data exported to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
+                            <span class="s1">&#39;: Susceptibility data exported to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">insertPlainText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div></td></tr></table></div>
@@ -1861,7 +1861,7 @@ and saves it as csv</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class=" language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1938,14 +1938,14 @@ It is set to "./User/Documents"</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.__init__._susceptivility_checked">_susceptivility_checked</span></code></td>
+            <td><code><span title="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.__init__._susceptibility_checked">_susceptibility_checked</span></code></td>
             <td>
                   <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
                 <p>the status of the check box that gives the option to save
-the susceptivility</p>
+the susceptibility</p>
               </div>
             </td>
           </tr>
@@ -1988,7 +1988,7 @@ the susceptivility</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 89</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 89</span>
 <span class="normal"> 90</span>
 <span class="normal"> 91</span>
 <span class="normal"> 92</span>
@@ -2046,9 +2046,9 @@ the susceptivility</p>
 <span class="sd">    _defaultPath: str</span>
 <span class="sd">        the default path in the browser.</span>
 <span class="sd">        It is set to &quot;./User/Documents&quot;</span>
-<span class="sd">    _susceptivility_checked: bool</span>
+<span class="sd">    _susceptibility_checked: bool</span>
 <span class="sd">        the status of the check box that gives the option to save</span>
-<span class="sd">        the susceptivility</span>
+<span class="sd">        the susceptibility</span>
 <span class="sd">    _temperature: str</span>
 <span class="sd">        the string value of the temperature introduced in the dlg</span>
 <span class="sd">    _last_msg: str</span>
@@ -2066,7 +2066,7 @@ the susceptivility</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">_defaultPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span>
     <span class="c1"># self._ifile_selected = False</span>
     <span class="c1"># self._ofile_selected = False</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_temperature</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -2083,7 +2083,7 @@ the susceptivility</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.set_iFile_DisplayText" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">set_iFile_DisplayText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></code>
+            <code class=" language-python"><span class="n">set_iFile_DisplayText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2128,7 +2128,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
@@ -2163,7 +2163,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.set_oFile_DisplayText" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">set_oFile_DisplayText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></code>
+            <code class=" language-python"><span class="n">set_oFile_DisplayText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2208,7 +2208,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">147</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
@@ -2243,7 +2243,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.display_iFile_Text" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">display_iFile_Text</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">display_iFile_Text</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2278,7 +2278,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">161</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">161</span>
 <span class="normal">162</span>
 <span class="normal">163</span>
 <span class="normal">164</span>
@@ -2305,7 +2305,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.display_oFile_Text" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">display_oFile_Text</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">display_oFile_Text</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2340,7 +2340,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">171</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">171</span>
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
@@ -2367,7 +2367,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.open_iFileDialog" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">open_iFileDialog</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">open_iFileDialog</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2379,7 +2379,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">181</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">181</span>
 <span class="normal">182</span>
 <span class="normal">183</span>
 <span class="normal">184</span>
@@ -2436,7 +2436,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.display_temp_Text" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">display_temp_Text</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">display_temp_Text</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2471,7 +2471,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
 <span class="normal">207</span>
 <span class="normal">208</span>
 <span class="normal">209</span>
@@ -2500,7 +2500,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.open_oFileDialog" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">open_oFileDialog</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">open_oFileDialog</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2512,7 +2512,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">217</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">217</span>
 <span class="normal">218</span>
 <span class="normal">219</span>
 <span class="normal">220</span>
@@ -2565,7 +2565,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.updateRadioSelection" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">updateRadioSelection</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">updateRadioSelection</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2577,7 +2577,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
 <span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span>
@@ -2604,7 +2604,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.updateCheckBoxState" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">updateCheckBoxState</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">updateCheckBoxState</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2617,7 +2617,7 @@ the browser, for instance</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">250</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">250</span>
 <span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
@@ -2636,16 +2636,16 @@ the browser, for instance</p>
 
 <span class="sd">    Also enables/disables the temperature lineEdit.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptivility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptibility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">label_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lineEdit_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">label_K</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptivility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkBox_Susceptibility</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">label_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lineEdit_Temp</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">label_K</span><span class="o">.</span><span class="n">setDisabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="o">=</span> <span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2656,7 +2656,7 @@ the browser, for instance</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.DLG.sortAndSave" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">sortAndSave</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">sortAndSave</span><span class="p">()</span></code>
 
 </h3>
 
@@ -2837,7 +2837,7 @@ and if so, proceeds.</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">267</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">267</span>
 <span class="normal">268</span>
 <span class="normal">269</span>
 <span class="normal">270</span>
@@ -3156,7 +3156,7 @@ and if so, proceeds.</p>
                     <span class="s1">&#39;: Data succesfully exported to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">insertPlainText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_susceptivility_checked</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_susceptibility_checked</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
             <span class="c1"># Guardo el valor de la temperatura</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_temperature</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">display_temp_Text</span><span class="p">()</span>
             <span class="n">temp</span><span class="p">:</span> <span class="nb">float</span>
@@ -3195,7 +3195,7 @@ and if so, proceeds.</p>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">=</span> <span class="n">QDateTime</span><span class="o">.</span><span class="n">currentDateTime</span><span class="p">()</span><span class="o">.</span>\
                         <span class="n">toString</span><span class="p">(</span><span class="s1">&#39;hh:mm:ss&#39;</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">+</span> \
-                        <span class="s1">&#39;: Error exporting susceptivility data to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
+                        <span class="s1">&#39;: Error exporting susceptibility data to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">setTextColor</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">insertPlainText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span><span class="p">)</span>
                     <span class="k">return</span> <span class="kc">False</span>
@@ -3203,7 +3203,7 @@ and if so, proceeds.</p>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">=</span> <span class="n">QDateTime</span><span class="o">.</span><span class="n">currentDateTime</span><span class="p">()</span><span class="o">.</span>\
                         <span class="n">toString</span><span class="p">(</span><span class="s1">&#39;hh:mm:ss&#39;</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_date</span> <span class="o">+</span> \
-                        <span class="s1">&#39;: Susceptivility data exported to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
+                        <span class="s1">&#39;: Susceptibility data exported to CSV!</span><span class="se">\n</span><span class="s1">&#39;</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">textBrowser_log</span><span class="o">.</span><span class="n">insertPlainText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_msg</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div></td></tr></table></div>
@@ -3292,7 +3292,7 @@ sendig out the signals.</p>
 
               <details class="quote">
                 <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">455</span>
+                <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">455</span>
 <span class="normal">456</span>
 <span class="normal">457</span>
 <span class="normal">458</span>
@@ -3369,7 +3369,7 @@ sendig out the signals.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">updateRadioSelection</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">radioButton_LET</span><span class="o">.</span><span class="n">toggled</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">updateRadioSelection</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">checkBox_Susceptivility</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">checkBox_Susceptibility</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">updateCheckBoxState</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -3390,7 +3390,7 @@ sendig out the signals.</p>
 
 
 <h3 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.QENStoCSV.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">view</span><span class="p">)</span></code>
+            <code class=" language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">view</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3402,7 +3402,7 @@ sendig out the signals.</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">472</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">472</span>
 <span class="normal">473</span>
 <span class="normal">474</span>
 <span class="normal">475</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
@@ -3428,7 +3428,7 @@ sendig out the signals.</p>
 
 
 <h2 id="QENS_to_csv_pkg.app_QENStoCSV_Dlg.main" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">main</span><span class="p">()</span></code>
+            <code class=" language-python"><span class="n">main</span><span class="p">()</span></code>
 
 </h2>
 
@@ -3440,7 +3440,7 @@ sendig out the signals.</p>
 
             <details class="quote">
               <summary>Source code in <code>QENS_to_csv_pkg\app_QENStoCSV_Dlg.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">497</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">497</span>
 <span class="normal">498</span>
 <span class="normal">499</span>
 <span class="normal">500</span>
@@ -3518,6 +3518,10 @@ sendig out the signals.</p>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

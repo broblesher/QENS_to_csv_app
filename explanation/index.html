@@ -18,7 +18,7 @@
     
     
       
-        <title>Background - QENS_to_csv_app Documentation</title>
+        <title>Explanation - QENS_to_csv_app Documentation</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Background
+              Explanation
             
           </span>
         </div>
@@ -216,7 +216,7 @@
         
   
   <span class="md-ellipsis">
-    About
+    Tutorial
     
   </span>
   
@@ -309,7 +309,7 @@
         
   
   <span class="md-ellipsis">
-    Background
+    Explanation
     
   </span>
   
@@ -355,80 +355,78 @@
 
 
 <h1 id="background">Background</h1>
-<p>QENS to csv App arises from the neccesity to parse data recorded in different instruments from several facilities, reduced using a variety of scientific software. All the input files are text files with a different number of header lines, some of them containing metadata, followed by the measured quantities at different scattering vector ($Q$) values in three columns (Energy, Scattered Intensity, error). The goal was to have only one application to sort the data recorded in all the intruments in a matrix with the measured quantities at different $Q$-values along the columns.</p>
+<p>QENS to csv App arises from the neccesity to parse data recorded in different instruments from several facilities, reduced using a variety of scientific software. All the input files are text files with a different number of header lines, some of them containing metadata, followed by the measured quantities at different scattering vector (<span class="arithmatex">\(Q\)</span>) values in three columns (Energy, Scattered Intensity, error). The goal was to have only one application to sort the data recorded in all the intruments in a matrix with the measured quantities at different <span class="arithmatex">\(Q\)</span>-values along the columns.</p>
 <h1 id="input-data-files">Input data files</h1>
 <h2 id="in5">IN5</h2>
-<p>The data obtained in <a href="https://www.ill.eu/for-ill-users/instruments/instruments-list/in5/description/instrument-layout">IN5</a> at <a href="https://www.ill.eu/">ILL</a> (Granoble, France) was reduced using <a href="https://www.ill.eu/for-ill-users/support-labs-infrastructure/software-scientific-tools/lamp">Lamp</a>. The input file is a *.inx file. There are 4 header lines followed by the recorded data in three space-separated columns. This block repeats for each $Q$-value:</p>
-<blockquote>
-<p>653    1    2    0    0    0    0  650</p>
-<p><strong>0.0980</strong>  81.799  6.2832    0.000   1.0 0
+<p>The data obtained in <a href="https://www.ill.eu/for-ill-users/instruments/instruments-list/in5/description/instrument-layout">IN5</a> at <a href="https://www.ill.eu/">ILL</a> (Granoble, France) was reduced using <a href="https://www.ill.eu/for-ill-users/support-labs-infrastructure/software-scientific-tools/lamp">Lamp</a>. The input file is a *.inx file. There are 4 header lines followed by the recorded data in three space-separated columns. This block repeats for each <span class="arithmatex">\(Q\)</span>-value:</p>
+<div class="highlight"><pre><span></span><code> 653    1    2    0    0    0    0  650
+
+0.0980  81.799  6.2832    0.000   1.0 0
                  0.0000  4.2959  0.0000
       -4.99500  0.00000e+00 -1.0000e+00
       -4.98500  0.00000e+00 -1.0000e+00
       -4.97500  0.00000e+00 -1.0000e+00
-.................................................................
+.......................................
        1.49500  0.00000e+00 -1.0000e+00
- 653    1    2    0    0    0    0  650</p>
-<p><strong>0.1960</strong>  81.799  6.2832    0.000   1.0 0
+ 653    1    2    0    0    0    0  650
+
+0.1960  81.799  6.2832    0.000   1.0 0
                  0.0000  4.2959  0.0000
       -4.99500  0.00000e+00 -1.0000e+00
       -4.98500  0.00000e+00 -1.0000e+00
       -4.97500  0.00000e+00 -1.0000e+00
       -4.96500  0.00000e+00 -1.0000e+00
-.................................................................</p>
-</blockquote>
-<p>The $Q$-value is the first value of the third row for each block (emphasized in bold in the above example).</p>
+.......................................
+</code></pre></div>
+<p>The <span class="arithmatex">\(Q\)</span>-value is the first value of the third row for each block.</p>
 <h2 id="in16b">IN16B</h2>
-<p>The data recorded in <a href="https://www.ill.eu/for-ill-users/instruments/instruments-list/in16b/description/instrument-layout">IN16B</a> at <a href="https://www.ill.eu/">ILL</a> (Grenoble, France) was reduced using <a href="https://www.ncnr.nist.gov/dave/index.html">DAVE</a>. The input file is a *.dat file. There are 26 main hearder lines (begining with the # symbol) contining the metadata. Next, there are 4 subheader lines followed by the measurement at each $Q$-value, consisting in 3 tab separated columns with the recorded quantities:</p>
-<blockquote>
-<p># instrument.name = IN16b 
+<p>The data recorded in <a href="https://www.ill.eu/for-ill-users/instruments/instruments-list/in16b/description/instrument-layout">IN16B</a> at <a href="https://www.ill.eu/">ILL</a> (Grenoble, France) was reduced using <a href="https://www.ncnr.nist.gov/dave/index.html">DAVE</a>. The input file is a *.dat file. There are 26 main hearder lines (begining with the # symbol) contining the metadata. Next, there are 4 subheader lines followed by the measurement at each <span class="arithmatex">\(Q\)</span>-value, consisting in 3 tab separated columns with the recorded quantities:</p>
+<div class="highlight"><pre><span></span><code># instrument.name = IN16b 
 # user.proposal = 6-02-637 
-..............................................
+.............................................
 # Spectrum No. 0
 # q(Angstrom^-1) = 0.29
 # Scattering Angle(Degrees) = 16.80
 # Energy transfer(meV), Intensity, Error
--1.426190e-01 -9.629884e-02    9.415056e-02
-.........................................................................
+-1.426190e-01   -9.629884e-02    9.415056e-02
+.............................................
 # Spectrum No. 2
 # q(Angstrom^-1) = 0.59
 # Scattering Angle(Degrees) = 34.42
 # Energy transfer(meV), Intensity, Error
--1.426190e-01  0.000000e+00    0.000000e+00
-.........................................................................</p>
-</blockquote>
+-1.426190e-01    0.000000e+00    0.000000e+00
+.............................................
+</code></pre></div>
 <h2 id="focus">FOCUS</h2>
-<p>The data measured at <a href="https://www.psi.ch/en/sinq/focus">FOCUS</a> at <a href="https://www.psi.ch/en/cnm">PSI</a> (Villigen, Switzerland) was reduced using <a href="https://www.ncnr.nist.gov/dave/index.html">DAVE</a>. The input data file is a *.txt file. There are 58 main header lines (begining with the # symbol) containing the metadata, followed by the measurements at each $Q$-value: 3 subheader lines followed by three space-separated columns with the recorded quantities:</p>
-<blockquote>
-<p>#DAVE ASCII OUTPUT
+<p>The data measured at <a href="https://www.psi.ch/en/sinq/focus">FOCUS</a> at <a href="https://www.psi.ch/en/cnm">PSI</a> (Villigen, Switzerland) was reduced using <a href="https://www.ncnr.nist.gov/dave/index.html">DAVE</a>. The input data file is a *.txt file. There are 58 main header lines (begining with the # symbol) containing the metadata, followed by the measurements at each <span class="arithmatex">\(Q\)</span>-value: 3 subheader lines followed by three space-separated columns with the recorded quantities:</p>
+<div class="highlight"><pre><span></span><code>#DAVE ASCII OUTPUT
 #Instrument: FOCUS
-.......................................
+...................................
 #Group Number: 1
-#Group Value: <strong>0.35000000</strong>
+#Group Value: 0.35000000
 #X Value    Intensity dIntensity
 -1.0000000  -1.6424588  0.18596862
-...........................................................
+..................................
 #Group Number: 2
-#Group Value: <strong>0.45000000</strong>
+#Group Value: 0.45000000
 #X Value    Intensity dIntensity
 -1.0000000  0.34624067  0.42417713
-...........................................................</p>
-</blockquote>
-<p>The $Q$-value is emphasized in bold in the above example.</p>
+...................................
+</code></pre></div>
+<p>The <span class="arithmatex">\(Q\)</span>-value is in the <strong>#Group Value:</strong> line.</p>
 <h2 id="let">LET</h2>
-<p>The data recorded in <a href="https://www.isis.stfc.ac.uk/Pages/let.aspx">LET</a> at <a href="https://www.isis.stfc.ac.uk/Pages/home.aspx">ISIS</a> (Oxfordshire, UK) was reduce using <a href="https://www.mantidproject.org/">Mantid</a> and <a href="http://mslice.isis.rl.ac.uk">MSlice</a>. In this case, there is a *.txt file for each $Q$. The files have 4 header lines (begining with the # symbol) followed by the measured data in three space separated columns:</p>
-<blockquote>
-<p># MSlice Cut of workspace "LET77597_1.05meV_rings"
+<p>The data recorded in <a href="https://www.isis.stfc.ac.uk/Pages/let.aspx">LET</a> at <a href="https://www.isis.stfc.ac.uk/Pages/home.aspx">ISIS</a> (Oxfordshire, UK) was reduce using <a href="https://www.mantidproject.org/">Mantid</a> and <a href="http://mslice.isis.rl.ac.uk">MSlice</a>. In this case, there is a *.txt file for each <span class="arithmatex">\(Q\)</span>. The files have 4 header lines (begining with the # symbol) followed by the measured data in three space separated columns:</p>
+<div class="highlight"><pre><span></span><code># MSlice Cut of workspace &quot;LET77597_1.05meV_rings&quot;
 # Cut axis: DeltaE,-3.0,0.699999988079071,0.004999999888241291
-# Integration axis: |Q|,<strong>0.7999999999999999,0.8999999999999999,</strong> 0.0
+# Integration axis: |Q|,0.7999999999999999,0.8999999999999999, 0.0
 # (Energy Transfer (meV)) (Signal) (Error)
 -3.000000000e+00          nan          nan
-.......................................................................</p>
-</blockquote>
-<p>The $Q$ is the mean value of the quantities in the third row (emphasized in bold in the example).</p>
+...................................................................
+</code></pre></div>
+<p>The <span class="arithmatex">\(Q\)</span> is the mean value of the quantities in the third row (<strong># Integration axis:</strong>).</p>
 <h1 id="output-data-files">Output data files</h1>
-<h2 id="scattered-intensity-sq-e">Scattered Intensity: $S(Q, E)$</h2>
-<p>The output file containing the scattered intensity data contains $3*n_Q$ (with $n_Q$ the number of $Q$-values) columns:</p>
+<h2 id="scattered-intensity-sq-e">Scattered Intensity: <span class="arithmatex">\(S(Q, E)\)</span></h2>
+<p>The output file containing the scattered intensity data contains <span class="arithmatex">\(3*n_Q\)</span> (with <span class="arithmatex">\(n_Q\)</span> the number of <span class="arithmatex">\(Q\)</span>-values) columns:</p>
 <table>
 <thead>
 <tr>
@@ -462,12 +460,12 @@
 </tr>
 </tbody>
 </table>
-<p>The name of the scattered intensity columns contains the name of the input file and thecorresponding $Q$-value.</p>
-<h2 id="susceptibility-chi-q-e">Susceptibility: $\chi (Q, E)$</h2>
-<p>QENS to csv App gives the option to calculate and export the susceptibility $\chi(Q, E)$ corresponding to each measurement, calculated as:[^1]</p>
-<p>$\chi''(Q, E) = \pi [\exp(|E|/k_B  T) - 1] S(Q, E)$,      $E &lt; 0$
-$\chi''(Q, E) = \pi [1 - \exp(-E/k_B T) - 1] S(Q, E)$,    $E &lt; 0$</p>
-<p>The corresponding output file contains $4*n_Q$ (with $n_Q$ the number of $Q$-values) columns:</p>
+<p>The name of the scattered intensity columns contains the name of the input file and the corresponding <span class="arithmatex">\(Q\)</span>-value.</p>
+<h2 id="susceptibility-chi-q-e">Susceptibility: <span class="arithmatex">\(\chi (Q, E)\)</span></h2>
+<p>QENS to csv App gives the option to calculate and export the susceptibility <span class="arithmatex">\(\chi(Q, E)\)</span> corresponding to each measurement, calculated as:<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p><span class="arithmatex">\(\chi''(Q, E) = \pi [\textrm{e}^{|E|/k_B  T} - 1] S(Q, E)\)</span>,      <span class="arithmatex">\(~~~~~~~~~~~~~~~E &lt; 0\)</span>
+<span class="arithmatex">\(\chi''(Q, E) = \pi [1 - \textrm{e}^{-E/k_B T} - 1] S(Q, E)\)</span>,    <span class="arithmatex">\(~~~~~~~E &gt; 0\)</span></p>
+<p>The corresponding output file contains <span class="arithmatex">\(4*n_Q\)</span> (with <span class="arithmatex">\(n_Q\)</span> the number of <span class="arithmatex">\(Q\)</span>-values) columns:</p>
 <table>
 <thead>
 <tr>
@@ -495,8 +493,15 @@ $\chi''(Q, E) = \pi [1 - \exp(-E/k_B T) - 1] S(Q, E)$,    $E &lt; 0$</p>
 </tr>
 </tbody>
 </table>
-<p>The energy columns contain the $|E|$ values, and the subscript indicates if the value corresponds to the negative ($-$) or the positive ($+$) energy. The name of the $\chi (Q, E)$ columns contain the name of the input file and the corresponding $Q$ value. The data is sorted in ascending order for the absolute value of energy.</p>
-<p>[^1]: Arbe, A., Nilsen, G. J., Stewart, J. R., Alvarez, F., Sakai, V. G., &amp; Colmenero, J. (2020). Coherent structural relaxation of water from meso- To intermolecular scales measured using neutron spectroscopy with polarization analysis. Physical Review Research, 2(2), 022015. https://doi.org/10.1103/PhysRevResearch.2.022015</p>
+<p>The energy columns contain the <span class="arithmatex">\(|E|\)</span> values, and the subscript indicates if the value corresponds to the negative (<span class="arithmatex">\(-\)</span>) or the positive (<span class="arithmatex">\(+\)</span>) energy. The name of the <span class="arithmatex">\(\chi (Q, E)\)</span> columns contain the name of the input file and the corresponding <span class="arithmatex">\(Q\)</span> value. The data is sorted in ascending order for the absolute value of energy.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Arbe, A., Nilsen, G. J., Stewart, J. R., Alvarez, F., Sakai, V. G., &amp; Colmenero, J. (2020). Coherent structural relaxation of water from meso- To intermolecular scales measured using neutron spectroscopy with polarization analysis. Physical Review Research, 2(2), 022015. <a href="https://doi.org/10.1103/PhysRevResearch.2.022015">DOI: 10.1103/PhysRevResearch.2.022015</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -547,6 +552,10 @@ $\chi''(Q, E) = \pi [1 - \exp(-E/k_B T) - 1] S(Q, E)$,    $E &lt; 0$</p>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
