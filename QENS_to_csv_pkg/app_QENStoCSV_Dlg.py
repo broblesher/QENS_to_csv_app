@@ -48,8 +48,8 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
         to save the output file name and path
     _defaultPath: str
         to save the default path when initializing the app
-    _susceptivility_checked: bool
-        to save the value of the susceptivility checkbox
+    _susceptibility_checked: bool
+        to save the value of the susceptibility checkbox
     _temperature: str
         to save the (str) value of the temperature introduced
         in the lineEdit
@@ -102,9 +102,9 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
         _defaultPath: str
             the default path in the browser.
             It is set to "./User/Documents"
-        _susceptivility_checked: bool
+        _susceptibility_checked: bool
             the status of the check box that gives the option to save
-            the susceptivility
+            the susceptibility
         _temperature: str
             the string value of the temperature introduced in the dlg
         _last_msg: str
@@ -122,7 +122,7 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
         self._defaultPath = os.path.expanduser('~')
         # self._ifile_selected = False
         # self._ofile_selected = False
-        self._susceptivility_checked = False
+        self._susceptibility_checked = False
         self._temperature = ''
         self._last_msg = ''
         self._current_date = ''
@@ -252,16 +252,16 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
 
         Also enables/disables the temperature lineEdit.
         """
-        if self.checkBox_Susceptivility.isChecked() is True:
+        if self.checkBox_Susceptibility.isChecked() is True:
             self.label_Temp.setDisabled(False)
             self.lineEdit_Temp.setDisabled(False)
             self.label_K.setDisabled(False)
-            self._susceptivility_checked = True
-        if self.checkBox_Susceptivility.isChecked() is False:
+            self._susceptibility_checked = True
+        if self.checkBox_Susceptibility.isChecked() is False:
             self.label_Temp.setDisabled(True)
             self.lineEdit_Temp.setDisabled(True)
             self.label_K.setDisabled(True)
-            self._susceptivility_checked = False
+            self._susceptibility_checked = False
 
     # Función que se ejecuta cuando pulso save
     def sortAndSave(self) -> bool:
@@ -399,7 +399,7 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
                         ': Data succesfully exported to CSV!\n'
                     self.textBrowser_log.insertPlainText(self._last_msg)
 
-            if self._susceptivility_checked is True:
+            if self._susceptibility_checked is True:
                 # Guardo el valor de la temperatura
                 self._temperature = self.display_temp_Text()
                 temp: float
@@ -438,7 +438,7 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
                         self._current_date = QDateTime.currentDateTime().\
                             toString('hh:mm:ss')
                         self._last_msg = self._current_date + \
-                            ': Error exporting susceptivility data to CSV!\n'
+                            ': Error exporting susceptibility data to CSV!\n'
                         self.textBrowser_log.setTextColor(QColor(255, 51, 0))
                         self.textBrowser_log.insertPlainText(self._last_msg)
                         return False
@@ -446,7 +446,7 @@ class DLG(QDialog, Ui_Dialog_QENStoCSV):
                         self._current_date = QDateTime.currentDateTime().\
                             toString('hh:mm:ss')
                         self._last_msg = self._current_date + \
-                            ': Susceptivility data exported to CSV!\n'
+                            ': Susceptibility data exported to CSV!\n'
                         self.textBrowser_log.insertPlainText(self._last_msg)
         return True
 
@@ -490,7 +490,7 @@ class QENStoCSV:
             self._view.updateRadioSelection)
         self._view.radioButton_LET.toggled.connect(
             self._view.updateRadioSelection)
-        self._view.checkBox_Susceptivility.stateChanged.connect(
+        self._view.checkBox_Susceptibility.stateChanged.connect(
             self._view.updateCheckBoxState)
 
 

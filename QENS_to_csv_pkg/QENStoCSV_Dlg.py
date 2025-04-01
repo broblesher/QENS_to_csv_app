@@ -102,9 +102,9 @@ class Ui_Dialog_QENStoCSV(object):
         self.verticalLayout_5.addItem(spacerItem2)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.checkBox_Susceptivility = QtWidgets.QCheckBox(Dialog_QENStoCSV)
-        self.checkBox_Susceptivility.setObjectName("checkBox_Susceptivility")
-        self.horizontalLayout_5.addWidget(self.checkBox_Susceptivility)
+        self.checkBox_Susceptibility = QtWidgets.QCheckBox(Dialog_QENStoCSV)
+        self.checkBox_Susceptibility.setObjectName("checkBox_Susceptibility")
+        self.horizontalLayout_5.addWidget(self.checkBox_Susceptibility)
         spacerItem3 = QtWidgets.QSpacerItem(
             138, 20, QtWidgets.QSizePolicy.Expanding,
             QtWidgets.QSizePolicy.Minimum)
@@ -178,8 +178,8 @@ class Ui_Dialog_QENStoCSV(object):
         self.lineEdit_oFile.setText(
             _translate("Dialog_QENStoCSV", os.path.expanduser('~')))
         self.pushButton_oFile.setText(_translate("Dialog_QENStoCSV", "Browse"))
-        self.checkBox_Susceptivility.setText(
-            _translate("Dialog_QENStoCSV", "Save susceptivility too"))
+        self.checkBox_Susceptibility.setText(
+            _translate("Dialog_QENStoCSV", "Save susceptibility too"))
         self.label_Temp.setText(_translate("Dialog_QENStoCSV", "T = "))
         self.label_Temp.setDisabled(True)
         self.label_K.setText(_translate("Dialog_QENStoCSV", "K"))

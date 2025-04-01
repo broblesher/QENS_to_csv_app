@@ -5,7 +5,9 @@ QENS to csv sorts data collected at [IN5](https://www.ill.eu/for-ill-users/instr
 QENS to csv App's interface looks like this:
 
 ![QENS to csv App GUI](QENStoCSVappGUI.jpg "QENS to csv App")
-*QENS to csv App GUI.*
+/// caption
+QENS to csv App GUI.
+///
 
 # Usage
 1. Write the absolute path and input file name in the corresponding edit box. Alternatively, you can click the **Browse** button to open a File Explorer window and select the input file.
@@ -16,8 +18,12 @@ QENS to csv App's interface looks like this:
 
 4. Click the **Save as CSV** botton to export the sorted data. 
 
-5. There is option to calculate the susceptibility $\chi(Q, E)$ and export it to another file. To activate this option, you have to mark the **Save susceptivility too** checkbox. 
+5. There is option to calculate the susceptibility $\chi(Q, E)$ and export it to another file. To activate this option, you have to mark the **Save susceptibility too** checkbox. 
 
-   ![QENS to csv App GUI chi](QENStoCSVappGUI_2.jpg "The GUI with the susceptivility option checked")
+   ![QENS to csv App GUI chi](QENStoCSVappGUI_2.jpg "The GUI with the susceptibility option checked")
+   /// caption
+   QENS to csv App GUI with the "Save susceptibility" option checked.
+   ///
 
-   Once checked, the temperature edit box will be active to write the corresponding value. When you click the **Save as CSV** botton both, the scattered intensity $S(Q, E)$ and the corresponding susceptivility $\chi(Q, E)$, will be exported to csv files. The name of the susceptivility file will be the same as the scattered intensity one, with "_chi" appended.
+
+   Once checked, the temperature edit box will be active to write the corresponding value. When you click the **Save as CSV** botton both, the scattered intensity $S(Q, E)$ and the corresponding susceptibility $\chi(Q, E)$, will be exported to csv files. The name of the susceptibility file will be the same as the scattered intensity one, with "_chi" appended.

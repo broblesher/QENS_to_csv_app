@@ -14,13 +14,24 @@ plugins:
           docstring_style: numpy
           members_order: source
 
+markdown_extensions:
+- admonition
+- codehilite
+- pymdownx.superfences
+- pymdownx.blocks.caption
+- footnotes
+- tables
+- pymdownx.arithmatex:
+      generic: true
 
-
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - QENS to csv App: index.md
-  - tutorials.md
+  - Tutorial: tutorials.md
   - how-to-guides.md
   - Ref. QENS to csv App: reference.md
   - Ref. FuncionesLeer: ref-funcionesleer.md
-  - explanation.md
+  - Explanation: explanation.md
